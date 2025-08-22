@@ -85,11 +85,11 @@ You can easily modify the following parameters at the top of the `app.py` file:
 
 ## Troubleshooting
 
-1. **"API Key Not Set" Error**: Make sure you set the DEEPSEEK_API_KEY environment variable in your terminal before running docker-compose up.
+1. **"API Key Not Set" Error**: Make sure you set the `DEEPSEEK_API_KEY` before running `docker-compose up`.
 
-2. **"Connection Refused" to Ollama**: Ensure the base_url in app.py is set to http://ollama:11434. This is the internal network address for the Ollama service.
+2. **"Connection Refused" to Ollama**: Ensure the `base_url` in `app.py` is set to `http://ollama:11434`. This is the internal network address for the Ollama service.
 
-3. **Build Fails**: If the build fails on pip install, double-check that your requirements.txt file is correct and that the build-essential package is being installed in your Dockerfile.
+3. **Build Fails**: If the build fails on `pip install`, double-check that your `requirements.txt` file is correct and that the `build-essential` package is being installed in your `Dockerfile`.
 
 4. **Check Container Logs**: If the application is not behaving as expected, check the logs for errors:
 ```bash
