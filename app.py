@@ -11,7 +11,7 @@ from langchain.schema.runnable import RunnablePassthrough
 from langchain.schema.output_parser import StrOutputParser
 
 # Configuration
-DEEPSEEK_API_KEY = "Put your API key here"
+DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY")
 PDF_FILE_PATH = "FAQ_Nawa.pdf"
 EMBEDDING_MODEL = "nomic-embed-text"
 DEEPSEEK_MODEL = "deepseek-chat"
