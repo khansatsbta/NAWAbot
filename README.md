@@ -7,8 +7,9 @@
 - RAG workflow that combines retrieval and generation for high-quality responses.
 - Secure functions to remove common injection phrases and to limit how many times a user can make a request in a given time period.
 - Splits text into manageable chunks.
-- Creates embeddings and a vector store using Chroma.
-- Interactive interface with Streamlit Interface
+- Creates embeddings and a vector store using FAISS.
+- Model self-evaluatiion.
+- Interactive interface with Streamlit Interface.
 
 ---
 
@@ -34,9 +35,9 @@ Ensure you have the following installed on your system:
 
 ### 3. Set Your API Key
 
-Input your DeepSeek API key in the app.py configuration.
+Input your DeepSeek API key in the .env configuration.
 
-```app.py
+```.env
 DEEPSEEK_API_KEY = "Put your API key here"
 ```
 
