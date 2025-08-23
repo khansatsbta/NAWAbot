@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  # Service 1: The Streamlit Chatbot Application
+  # The Streamlit Chatbot Application
   app:
     # Build the image from the Dockerfile in the current directory
     build: .
@@ -21,9 +21,8 @@ services:
     depends_on:
       - ollama
 
-  # Service 2: The Ollama LLM Service
+  # The Ollama LLM Service
   ollama:
-    # Use the official Ollama image
     image: ollama/ollama
     # Name the container
     container_name: ollama_service
@@ -31,7 +30,6 @@ services:
     ports:
       - "11434:11434"
     # Create a volume to persist the downloaded Ollama models
-    # This prevents you from having to re-download models every time you restart
     volumes:
       - ollama_data:/root/.ollama
 
