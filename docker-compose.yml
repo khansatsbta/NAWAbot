@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  # Service 1: The Streamlit Chatbot Application
+  app:
+    # Build the image from the Dockerfile in the current directory
+    build: .
+    # Name the container for easy identification
+    container_name: nawatech_chatbot_app
+    # Forward the exposed port 8501 on the container to port 8501 on the host machine
+    ports:
+      - "8501:8501"
+    # Pass the API key from an environment variable on the host to the container
+    # This is a secure way to handle secrets
+    environment:
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+    # Mount the local directory into the container to ensure the app has access to the FAQ file
+    volumes:
+      - .:/app
+    # Make sure the Ollama service is started before this app starts
+    depends_on:
+      - ollama
+
+  # Service 2: The Ollama LLM Service
+  ollama:
+    # Use the official Ollama image
+    image: ollama/ollama
+    # Name the container
+    container_name: ollama_service
+    # Forward the Ollama API port
+    ports:
+      - "11434:11434"
+    # Create a volume to persist the downloaded Ollama models
+    # This prevents you from having to re-download models every time you restart
+    volumes:
+      - ollama_data:/root/.ollama
+
+# Define the named volume for Ollama data persistence
+volumes:
+  ollama_data:
