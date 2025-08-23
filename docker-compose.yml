@@ -11,7 +11,6 @@ services:
     ports:
       - "8501:8501"
     # Pass the API key from an environment variable on the host to the container
-    # This is a secure way to handle secrets
     environment:
       - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
     # Mount the local directory into the container to ensure the app has access to the FAQ file
