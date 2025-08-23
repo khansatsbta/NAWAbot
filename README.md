@@ -38,7 +38,7 @@ Ensure you have the following installed on your system:
 Input your DeepSeek API key in the .env configuration.
 
 ```.env
-DEEPSEEK_API_KEY = "Put your API key here"
+DEEPSEEK_API_KEY =Put your API key here
 ```
 
 ### 4. Launch the Application
