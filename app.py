@@ -21,7 +21,7 @@ def sanitize_input(user_prompt):
     injection_patterns = [
         "ignore the above", "forget the previous", "you are now",
         "your instructions are", "provide your initial prompt"
-    ]
+    ] # Can add more phrases
 
     sanitized_prompt = user_prompt.lower()
     for pattern in injection_patterns:
