@@ -30,7 +30,8 @@ Ensure you have the following installed on your system:
 ├── FAQ_Nawa.pdf
 ├── requirements.txt
 ├── Dockerfile
-└── docker-compose.yml
+├── docker-compose.yml
+└──.env
 ```
 
 ### 3. Set Your API Key
